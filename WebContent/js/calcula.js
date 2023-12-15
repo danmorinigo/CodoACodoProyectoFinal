@@ -1,3 +1,5 @@
+//ESCRIBO MUCHAS BOLUDECES!!!!
+//pero ahora las borro!!
 var botonResumen = document.getElementById("botonCalcular");
 botonResumen.addEventListener('click', verificarDatos);
 
@@ -67,8 +69,9 @@ function redireccionarComprarTickets()
 {
     /*
     //window.location.href = "FrontController?accion=registrar";
-    //href = "FrontController?accion=registrar";
-	*/
+    */
+    href = "FrontController?accion=registrar";
+	
 }
 function conoceMas()
 {

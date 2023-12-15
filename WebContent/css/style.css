@@ -90,6 +90,10 @@ footer a:hover
 {
     color:rgb(16, 222, 16);
 }
+#linkBackOffice
+{
+	color:rgb(250, 150, 195)
+}
 .opaco
 {
     filter:brightness(50%)

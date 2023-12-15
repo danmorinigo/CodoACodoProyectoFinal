@@ -38,7 +38,7 @@ public class FrontController extends HttpServlet {
 		accion = request.getParameter("accion");
 
 		if (accion == null || accion.isEmpty()) {
-			dispatcher = request.getRequestDispatcher("vistas/index.jsp");
+			dispatcher = request.getRequestDispatcher("vistas/index.jsp#convertirteEnOrador");
 		} else if (accion.equals("registrar")) {
 			dispatcher = request.getRequestDispatcher("vistas/compraTickets.jsp");
 		}

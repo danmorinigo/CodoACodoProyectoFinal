@@ -28,19 +28,19 @@
 				<div class="collapse navbar-collapse d-md-flex" id="navbarsExample11">
 					<ul class="navbar-nav flex-grow-1 justify-content-end align-items-end text-end linkEncabezado">
 						<li class="nav-item">
-							<a class="" href="index.html#laConferencia">La conferencia</a>
+							<a class="" href="FrontController#laConferencia">La conferencia</a>
 						</li>
 						<li class="nav-item">
-							<a class="" href="index.html#losOradores">Los oradores</a>
+							<a class="" href="FrontController#losOradores">Los oradores</a>
 						</li>
 						<li class="nav-item">
-							<a class="" href="index.html#lugarYFecha">El lugar y la fecha</a>
+							<a class="" href="FrontController#lugarYFecha">El lugar y la fecha</a>
 						</li>
 						<li class="nav-item">
-							<a class="" href="index.html#convertirteEnOrador">Convi√©rtete en orador</a>
+							<a class="" href="FrontController#convertirteEnOrador">ConviÈrtete en orador</a>
 						</li>
 						<li class="nav-item">
-							<a id="linkComprarTickets" href="#">Comprar tickets</a>
+							<a id="linkBackOffice" href="#">Back Office</a>
 						</li>
 					</ul>
 				</div>
@@ -54,19 +54,19 @@
 				<p class="estiloCabeceraDescuentos">Estudiante</p>
 				<p>Tienen un descuento</p>
 				<p class="estiloDescuentos">80%</p>
-				<p class="estiloRecordatorio">*presentar documentaci√≥n</p>
+				<p class="estiloRecordatorio">*presentar documentaciÛn</p>
 			</div>
 			<div class="p-2  flex-grow-1 border border-success mx-1">
 				<p class="estiloCabeceraDescuentos">Trainee</p>
 				<p>Tienen un descuento</p>
 				<p class="estiloDescuentos">50%</p>
-				<p class="estiloRecordatorio">*presentar documentaci√≥n</p>
+				<p class="estiloRecordatorio">*presentar documentaciÛn</p>
 			</div>
 			<div class="p-2  flex-grow-1 border border-warning">
 				<p class="estiloCabeceraDescuentos">Junior</p>
 				<p>Tienen un descuento</p>
 				<p class="estiloDescuentos">15%</p>
-				<p class="estiloRecordatorio">*presentar documentaci√≥n</p>
+				<p class="estiloRecordatorio">*presentar documentaciÛn</p>
 			</div>
 		</div>
 		VENTA
@@ -114,7 +114,8 @@
 					<button type="reset" class="btn btn-success">Borrar</button>
 				</div>
 				<div class="col-6 d-grid">
-					<button id="botonCalcular" type="button" class="btn btn-success">Resumen</button>
+					<a id="botonCalcular" class="btn btn-success">Resumen</a>
+					<!-- button id="botonCalcular" type="button" class="btn btn-success">Resumen</button -->
 				</div>
 			</div>
 		</form>
@@ -126,7 +127,7 @@
 					<a href="#">Preguntas<br>frecuentes</a>
 				</div>
 				<div class="col m-1">
-					<a href="#">Cont√°ctanos</a>
+					<a href="#">Cont·ctanos</a>
 				</div>
 				<div class="col m-1">
 					<a href="#">Prensa</a>
@@ -135,7 +136,7 @@
 					<a href="#">Conferencias</a>
 				</div>
 				<div class="col m-1">
-					<a href="#">T√©rminos y condiciones</a>
+					<a href="#">TÈrminos y condiciones</a>
 				</div>
 				<div class="col m-1">
 					<a href="#">Privacidad</a>

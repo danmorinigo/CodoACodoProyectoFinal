@@ -18,7 +18,7 @@
 		<nav class="navbar navbar-expand-md colorFondoEncabezado pt-0 pb-2" aria-label="Thirteenth navbar example">
 			<div class="container-xl">
 				<a class="navbar-brand me-3 text-white" href="#">
-					<img src="Archivos/codoacodo.png" alt="Logo" width="100px" class="d-inline-block">
+					<img src="img/codoacodo.png" alt="Logo" width="100px" class="d-inline-block">
 					Conf Bs As
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -38,10 +38,13 @@
 							<a class="" href="#lugarYFecha">El lugar y la fecha</a>
 						</li>
 						<li class="nav-item">
-							<a class="" href="#convertirteEnOrador">ConviÃ©rtete en orador</a>
+							<a class="" href="#convertirteEnOrador">Conviértete en orador</a>
 						</li>
 						<li class="nav-item">
 							<a id="linkComprarTickets" href="FrontController?accion=registrar">Comprar tickets</a>
+						</li>
+						<li class="nav-item">
+							<a id="linkBackOffice" href="#">Back Office</a>
 						</li>
 					</ul>
 				</div>
@@ -74,9 +77,9 @@
 					<p>
 						Bs As llega por primera vez a Argentina. Un evento para compartir con
 						nuestra comunidad el conocimiento y experiencia de los expertos que
-						estÃ¡n creando el futuro de Internet. Ven a conocer a miembros del
+						están creando el futuro de Internet. Ven a conocer a miembros del
 						evento, a otros estudiantes de Codo a Codo y los oradores de primer
-						nivel que tenemos para ti. Â¡Te esperamos!
+						nivel que tenemos para ti. ¡Te esperamos!
 					</p>
 				</div>
 				<div class="d-none d-sm-block d-md-none text-center mt-5">
@@ -86,21 +89,23 @@
 					<p>
 						Por primera vez a Argentina. Veni a conocer los miembros del
 						evento, estudiantes y oradores de primer
-						nivel que tenemos para ti. Â¡Te esperamos!
+						nivel que tenemos para ti. ¡Te esperamos!
 					</p>
 				</div>
 				<div class="d-block d-sm-none text-center mb-0 pb-0 mt-5">
 					<p class="mb-0 pt-3">
 						Conoce los miembros del
-						evento. Â¡Te esperamos!
+						evento. ¡Te esperamos!
 					</p>
 				</div>
 				<div class="pt-1 d-grid gap-2 d-md-block">
-
-					<button type="button" class="btn btn-outline-light" onclick="redireccionarLosOradores()">Quiero ser
+				<p>
+					<a class="btn btn-outline-light mb-3" href="#convertirteEnOrador">Quiero ser orador</a> <a class="btn btn-success ms-2 mb-3" href="FrontController?accion=registrar">Comprar tickets</a>
+				</p>
+					<!--button type="button" class="btn btn-outline-light" onclick="redireccionarLosOradores()">Quiero ser
 						orador</button>
 					<button type="button" class="btn text-light colorVerde"
-						onclick="redireccionarComprarTickets()">Comprar tickets</button>
+						onclick="redireccionarComprarTickets()">Comprar tickets</button-->
 				</div>
 			</div>
 		</div>
@@ -167,16 +172,16 @@
 					<div class="card-body text-white">
 						<h5 class="card-title">Bs As - Octubre</h5>
 						<p class="card-text mt-2 mb-4">
-							Buenos Aires es la provincia y localidad mÃ¡s grande del estado de Argentina, en los Estados
+							Buenos Aires es la provincia y localidad más grande del estado de Argentina, en los Estados
 							Unidos.
-							Honolulu es la mÃ¡s sureÃ±a de entre las principales ciudades estadounidenses. Aunque el
+							Honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque el
 							nombre de Honolulu
-							se refiere al Ã¡rea urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de
+							se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de
 							Honolulu
 							han formado una ciudad-condado consolidada que cubre toda la ciudad (aproximadamente 600
 							km<sup>2</sup> de superficie).
 						</p>
-						<button type="button" class="btn btn-outline-light" onclick="conoceMas()">ConocÃ© mÃ¡s</button>
+						<button type="button" class="btn btn-outline-light" onclick="conoceMas()">Conocé más</button>
 					</div>
 				</div>
 			</div>
@@ -186,11 +191,11 @@
 		<a name="convertirteEnOrador"></a>
 		<div class="container mt-3 p-0" style="max-width: 650px;">
 			<div class="container text-center">
-				<p style="font-size:0.7rem;">CONVIÃ‰RTETE EN UN<br>
-					<spam style="font-size:1.7rem;">ORADOR<spam></spam>
+				<p style="font-size:0.7rem;">CONVIÉRTETE EN UN<br>
+					<spam style="font-size:1.7rem;">ORADOR</spam>
 				</p>
-				<p>AnÃ³tate como orador para dar una <abbr title="Lo que significa">charla ignite</abbr>. CuÃ©ntanos de
-					quÃ© quieres hablar.</p>
+				<p>Anótate como orador para dar una <abbr title="Lo que significa">charla ignite</abbr>. Cuéntanos de
+					qué quieres hablar.</p>
 			</div>
 			<div class="container">
 				<div class="row">
@@ -204,10 +209,10 @@
 				</div>
 				<div class="row mt-3">
 					<div class="col-12">
-						<textarea class="form-control form-control-lg" placeholder="Sobre quÃ© quieres hablar?"
+						<textarea class="form-control form-control-lg" placeholder="Sobre qué quieres hablar?"
 							id="exampleFormControlTextarea1" rows="8"></textarea>
 						<div id="passwordHelpBlock" class="form-text">
-							Recuerda incluir un tÃ­tulo para tu charla
+							Recuerda incluir un título para tu charla
 						</div>
 						<div class="d-grid gap-2 mt-4">
 							<button class="btn btn-success btn-lg" type="button" onclick="Enviar()">Enviar</button>
@@ -227,7 +232,7 @@
 					<a href="#">Preguntas<br>frecuentes</a>
 				</div>
 				<div class="col m-1">
-					<a href="#">ContÃ¡ctanos</a>
+					<a href="#">Contáctanos</a>
 				</div>
 				<div class="col m-1">
 					<a href="#">Prensa</a>
@@ -236,7 +241,7 @@
 					<a href="#">Conferencias</a>
 				</div>
 				<div class="col m-1">
-					<a href="#">TÃ©rminos y condiciones</a>
+					<a href="#">Términos y condiciones</a>
 				</div>
 				<div class="col m-1">
 					<a href="#">Privacidad</a>
