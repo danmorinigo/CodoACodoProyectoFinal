@@ -102,10 +102,6 @@
 				<p>
 					<a class="btn btn-outline-light mb-3" href="#convertirteEnOrador">Quiero ser orador</a> <a class="btn btn-success ms-2 mb-3" href="FrontController?accion=registrar">Comprar tickets</a>
 				</p>
-					<!--button type="button" class="btn btn-outline-light" onclick="redireccionarLosOradores()">Quiero ser
-						orador</button>
-					<button type="button" class="btn text-light colorVerde"
-						onclick="redireccionarComprarTickets()">Comprar tickets</button-->
 				</div>
 			</div>
 		</div>
@@ -256,7 +252,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
-	<script src="js/calcula.js"></script>
+	<script src="js/laConferencia.js"></script>
 </body>
 
 </html>

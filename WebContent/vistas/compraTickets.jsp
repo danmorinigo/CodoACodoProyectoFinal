@@ -97,7 +97,8 @@
 				<div class="col-6 text-start">
 					<label for="categoria" class="form-label">Categoria</label>
 					<select id="categoria" name="categoria" class="form-select" aria-label="Default select example">
-						<option value="1" selected>Estudiante</option>
+						<option value="0" selected>Sin descuento</option>
+						<option value="1">Estudiante</option>
 						<option value="2">Trainee</option>
 						<option value="3">Junior</option>
 					</select>
@@ -110,14 +111,23 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-6 d-grid">
-					<button type="reset" class="btn btn-success">Borrar</button>
+				<div class="col-3 d-grid">
+					<a id="botonVolver" class="btn btn-secondary" href="FrontController">Volver</a>
+				</div>
+				<div class="col-3 d-grid">
+					<button type="reset" class="btn btn-secondary">Borrar</button>
 				</div>
 				<div class="col-6 d-grid">
-					<a id="botonCalcular" class="btn btn-success">Resumen</a>
-					<!-- button id="botonCalcular" type="button" class="btn btn-success">Resumen</button -->
+					<a id="botonCalcular" class="btn btn-primary">Calcular</a>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-12 d-grid mt-2">
+					<a id="botonComprar" class="btn btn-success">Comprar</a>
+					<!-- button type="reset" class="btn btn-success">Borrar</button-->
+				</div>
+			</div>
+			
 		</form>
 	</main>
 	<footer class="container-fluid mt-3 d-flex align-items-center text-center">
@@ -150,7 +160,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 		crossorigin="anonymous"></script>
-	<script src="js/calcula.js"></script>
+	<script src="js/laConferencia.js"></script>
 </body>
 
 </html>
