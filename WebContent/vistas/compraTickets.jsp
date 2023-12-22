@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page import="misClases.TipoTicketDAO"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,8 +71,14 @@
 			</div>
 		</div>
 		VENTA
-		<p class="valorTicket">VALOR DE TICKET $200</p>
+		<% 
+				TipoTicketDAO tipoTicketDAO = new TipoTicketDAO();
+				tipoTicketDAO.cargarTicketsPredefinidos();
+				int valorTicket = (int)tipoTicketDAO.valorTicket();
+		%>
+		<p class="valorTicket">VALOR DE TICKET $<%=valorTicket%></p>
 		<form action="post">
+			<input id="valorDelTicket" type="hidden" value=<%=valorTicket%>>
 			<div class="row">
 				<div class="col-6 mb-1">
 					<input class="form-control" id="nombre" type="text" placeholder="Nombre"
@@ -97,10 +104,10 @@
 				<div class="col-6 text-start">
 					<label for="categoria" class="form-label">Categoria</label>
 					<select id="categoria" name="categoria" class="form-select" aria-label="Default select example">
-						<option value="0" selected>Sin descuento</option>
-						<option value="1">Estudiante</option>
-						<option value="2">Trainee</option>
-						<option value="3">Junior</option>
+						<option value="1" selected>Sin descuento</option>
+						<option value="2">Estudiante</option>
+						<option value="3">Trainee</option>
+						<option value="4">Junior</option>
 					</select>
 				</div>
 			</div>

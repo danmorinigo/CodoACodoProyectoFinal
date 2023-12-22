@@ -17,6 +17,11 @@ public class TipoTicket {
 		this.nombre = nombre;
 		this.descuento = descuento;
 	}
+	public TipoTicket(int id, String nombre, float descuento) {
+		this.id = id;
+		this.nombre = nombre;
+		this.descuento = descuento;
+	}
 	public TipoTicket() {
 	}
 	public int getId() {

@@ -62,6 +62,10 @@ public class TipoTicketDAO {
 		}
 	}
 	
+	public float valorTicket() {
+		TipoTicket valorTicket = buscarTipoTicket(1);
+		return valorTicket.getDescuento();
+	}
 	public TipoTicket buscarTipoTicket(int codigoTicket) {
 		PreparedStatement ps;
 		ResultSet rs;
@@ -88,8 +92,9 @@ public class TipoTicketDAO {
 	}
 	
 	public void cargarTicketsPredefinidos() {
-		this.insertarTipoTicket(new TipoTicket("Estudiante", 0.8f));
-		this.insertarTipoTicket(new TipoTicket("Trainee", 0.5f));
-		this.insertarTipoTicket(new TipoTicket("Junior", 0.15f));
+		this.insertarTipoTicket(new TipoTicket(1, "ValorTicket", 500));
+		this.insertarTipoTicket(new TipoTicket(2, "Estudiante", 0.8f));
+		this.insertarTipoTicket(new TipoTicket(3, "Trainee", 0.5f));
+		this.insertarTipoTicket(new TipoTicket(4, "Junior", 0.15f));
 	}
 }
