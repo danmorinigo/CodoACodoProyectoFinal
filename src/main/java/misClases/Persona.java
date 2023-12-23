@@ -23,6 +23,11 @@ public class Persona {
 		this.actualizado = actualizado;
 	}
 	
+	public Persona(String nombre, String apellido, String mail){
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.mail = mail;
+	}
 	public Persona() {
 	}
 

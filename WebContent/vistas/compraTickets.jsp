@@ -77,21 +77,21 @@
 				int valorTicket = (int)tipoTicketDAO.valorTicket();
 		%>
 		<p class="valorTicket">VALOR DE TICKET $<%=valorTicket%></p>
-		<form action="post">
+		<form action="FrontController?accion=comprar" method="post">
 			<input id="valorDelTicket" type="hidden" value=<%=valorTicket%>>
 			<div class="row">
 				<div class="col-6 mb-1">
-					<input class="form-control" id="nombre" type="text" placeholder="Nombre"
+					<input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre"
 						aria-label="default input example">
 				</div>
 				<div class="col-6 mb-1">
-					<input class="form-control" id="apellido" type="text" placeholder="Apellido"
+					<input class="form-control" id="apellido" name="apellido" type="text" placeholder="Apellido"
 						aria-label="default input example">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-12 mb-2">
-					<input class="form-control" id="correo" type="text" placeholder="Correo"
+					<input class="form-control" id="correo" name="correo" type="text" placeholder="Correo"
 						aria-label="default input example">
 				</div>
 			</div>
@@ -130,8 +130,7 @@
 			</div>
 			<div class="row">
 				<div class="col-12 d-grid mt-2">
-					<a id="botonComprar" class="btn btn-success">Comprar</a>
-					<!-- button type="reset" class="btn btn-success">Borrar</button-->
+					<button type="submit" class="w-100 btn btn-success" >Comprar</button>
 				</div>
 			</div>
 			

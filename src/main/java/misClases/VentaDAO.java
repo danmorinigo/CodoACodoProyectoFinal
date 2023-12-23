@@ -17,6 +17,42 @@ public class VentaDAO {
 		conexion = con.getConnection();
 	}
 
+	public boolean nuevaVenta(int idPersona, int idTipoTicket, float valorTicket, int cantidad) {
+		PersonaDAO pDAO = null;
+		try {
+			pDAO = new PersonaDAO();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		PreparedStatement ps;
+
+		if (pDAO.buscarPorId(idPersona).isHabilitado()) {
+			try {
+				ps = conexion
+						.prepareStatement("insert into tickets_vendidos(persona, tipo_ticket, valor_ticket, cantidad)"
+								+ "values (?, ?, ?, ?)");
+				ps.setInt(1, idPersona);
+				ps.setInt(2, idTipoTicket);
+				ps.setFloat(3, valorTicket);
+				ps.setInt(4, cantidad);
+				ps.execute();
+				return true;
+			} catch (SQLIntegrityConstraintViolationException e) {
+				System.out.println("Esto ya se encuentra registrado!");
+				return false;
+			} catch (SQLException e) {
+				System.out.println("en VENTAS_DAO");
+				System.out.println(e);
+				return false;
+			}
+
+		} else {
+			System.out.println("No puede comprar");
+			return false;
+		}
+	}
+	/*
 	public boolean nuevaVenta(Persona persona, TipoTicket tipoTicket, float valorTicket, int cantidad) {
 		PreparedStatement ps;
 
@@ -45,7 +81,7 @@ public class VentaDAO {
 			return false;
 		}
 	}
-
+	*/
 	public List<Venta> listarVentas() {
 		PreparedStatement ps;
 		ResultSet rs;

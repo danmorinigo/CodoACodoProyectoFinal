@@ -55,15 +55,16 @@ public class Conexion {
 				System.out.println(q + " id -> " + q.getId());
 			}
 		}
+		System.out.println(" id -> " + pDAO.idPersona(mailReferencia));
 		TipoTicketDAO ttDAO = new TipoTicketDAO();
 		ttDAO.cargarTicketsPredefinidos();
 		List<TipoTicket> listadoTipoTicket = ttDAO.listarTipoTickets();
 
 		VentaDAO vDAO = new VentaDAO();
 		float valor = 200;
-		vDAO.nuevaVenta(queCompra, listadoTipoTicket.get(0), valor, 5);
-		vDAO.nuevaVenta(queCompra, listadoTipoTicket.get(1), valor, 2);
-		vDAO.nuevaVenta(queCompra, listadoTipoTicket.get(2), valor, 1);
+		//vDAO.nuevaVenta(queCompra, listadoTipoTicket.get(0), valor, 5);
+		//vDAO.nuevaVenta(queCompra, listadoTipoTicket.get(1), valor, 2);
+		//vDAO.nuevaVenta(queCompra, listadoTipoTicket.get(2), valor, 1);
 
 		List<Venta> listadoVentas = vDAO.listarVentas();
 		for (Venta v : listadoVentas) {

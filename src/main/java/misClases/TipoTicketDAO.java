@@ -93,8 +93,24 @@ public class TipoTicketDAO {
 	
 	public void cargarTicketsPredefinidos() {
 		this.insertarTipoTicket(new TipoTicket(1, "ValorTicket", 500));
-		this.insertarTipoTicket(new TipoTicket(2, "Estudiante", 0.8f));
-		this.insertarTipoTicket(new TipoTicket(3, "Trainee", 0.5f));
-		this.insertarTipoTicket(new TipoTicket(4, "Junior", 0.15f));
+		this.insertarTipoTicket(new TipoTicket(2, "sinDescuento", 0.0f));
+		this.insertarTipoTicket(new TipoTicket(3, "Estudiante", 0.8f));
+		this.insertarTipoTicket(new TipoTicket(4, "Trainee", 0.5f));
+		this.insertarTipoTicket(new TipoTicket(5, "Junior", 0.15f));
+	}
+	public int idTipoTicket(String nombreTipoTicket) {
+		PreparedStatement ps;
+		ResultSet rs;
+		try {
+			//System.out.println(email);
+			ps = conexion.prepareStatement("select * from tipo_tickets where nombre=\"" + nombreTipoTicket + "\"");
+			rs = ps.executeQuery();
+			rs.next();
+			return rs.getInt("id");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return -1;
+		}
+		
 	}
 }

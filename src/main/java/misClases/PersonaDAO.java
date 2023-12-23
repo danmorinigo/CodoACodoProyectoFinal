@@ -38,6 +38,25 @@ public class PersonaDAO {
 
 	}
 
+	public Persona crear(String nombre, String apellido, String mail) {
+		Persona creada = new Persona(nombre, apellido, mail);
+		return creada;
+	}
+	public int idPersona(String email) {
+		PreparedStatement ps;
+		ResultSet rs;
+		try {
+			System.out.println(email);
+			ps = conexion.prepareStatement("select * from personas where mail=\"" + email + "\"");
+			rs = ps.executeQuery();
+			rs.next();
+			return rs.getInt("id");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return -1;
+		}
+		
+	}
 	public List<Persona> listarPersonas() {
 		PreparedStatement ps;
 		ResultSet rs;
@@ -65,5 +84,26 @@ public class PersonaDAO {
 			return null;
 		}
 
+	}
+	public Persona buscarPorId(int idPersona) {
+		PreparedStatement ps;
+		ResultSet rs;
+		try {
+			ps = conexion.prepareStatement("select * from personas where id=\"" + idPersona + "\"");
+			rs = ps.executeQuery();
+			rs.next();
+			int id = rs.getInt("id");
+			String nombre = rs.getString("nombre");
+			String apellido = rs.getString("apellido");
+			String mail = rs.getString("mail");
+			boolean habilitado = rs.getBoolean("habilitado");
+			String notas = rs.getString("notas");
+			Timestamp actualizado = rs.getTimestamp("actualizado");
+			Persona persona = new Persona(id, nombre, apellido, mail, habilitado, notas, actualizado);
+			return persona;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 }
