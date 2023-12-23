@@ -92,7 +92,7 @@ public class TipoTicketDAO {
 	}
 	
 	public void cargarTicketsPredefinidos() {
-		this.insertarTipoTicket(new TipoTicket(1, "ValorTicket", 500));
+		this.insertarTipoTicket(new TipoTicket(1, "ValorTicket", 200));
 		this.insertarTipoTicket(new TipoTicket(2, "sinDescuento", 0.0f));
 		this.insertarTipoTicket(new TipoTicket(3, "Estudiante", 0.8f));
 		this.insertarTipoTicket(new TipoTicket(4, "Trainee", 0.5f));
