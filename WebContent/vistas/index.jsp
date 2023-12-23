@@ -44,7 +44,7 @@
 							<a id="linkComprarTickets" href="FrontController?accion=registrar">Comprar tickets</a>
 						</li>
 						<li class="nav-item">
-							<a id="linkBackOffice" href="#">Back Office</a>
+							<a id="linkBackOffice" href="FrontController?accion=backOffice">Back Office</a>
 						</li>
 					</ul>
 				</div>

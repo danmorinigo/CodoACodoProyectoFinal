@@ -68,7 +68,7 @@ public class Conexion {
 
 		List<Venta> listadoVentas = vDAO.listarVentas();
 		for (Venta v : listadoVentas) {
-			float descuent = ttDAO.buscarTipoTicket(v.getTipoTicket()).getDescuento();
+			float descuent = ttDAO.buscarTipoTicket(v.getIdTipoTicket()).getDescuento();
 			float precio = v.getValorTicket();
 			int cant = v.getCantidad();
 			float totalSinDescuento = precio * cant;

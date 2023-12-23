@@ -4,24 +4,24 @@ import java.sql.Timestamp;
 
 public class Venta {
 	private int id;
-	private int persona;
-	private int tipoTicket;
+	private int idPersona;
+	private int idTipoTicket;
 	private float valorTicket;
 	private int cantidad;
 	private Timestamp actualizado;
 	
 	public Venta(int id, int persona, int tipoTicket, float valorTicket, int cantidad, Timestamp actualizado) {
 		this.id = id;
-		this.persona = persona;
-		this.tipoTicket = tipoTicket;
+		this.idPersona = persona;
+		this.idTipoTicket = tipoTicket;
 		this.valorTicket = valorTicket;
 		this.cantidad = cantidad;
 		this.actualizado = actualizado;
 	}
 
 	public Venta(int persona, int tipoTicket, float valorTicket, int cantidad) {
-		this.persona = persona;
-		this.tipoTicket = tipoTicket;
+		this.idPersona = persona;
+		this.idTipoTicket = tipoTicket;
 		this.valorTicket = valorTicket;
 		this.cantidad = cantidad;
 	}
@@ -35,17 +35,17 @@ public class Venta {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPersona() {
-		return persona;
+	public int getIdPersona() {
+		return idPersona;
 	}
-	public void setPersona(int persona) {
-		this.persona = persona;
+	public void setIdPersona(int idPersona) {
+		this.idPersona = idPersona;
 	}
-	public int getTipoTicket() {
-		return tipoTicket;
+	public int getIdTipoTicket() {
+		return idTipoTicket;
 	}
-	public void setTipoTicket(int tipoTicket) {
-		this.tipoTicket = tipoTicket;
+	public void setIdTipoTicket(int idTipoTicket) {
+		this.idTipoTicket = idTipoTicket;
 	}
 	public float getValorTicket() {
 		return valorTicket;

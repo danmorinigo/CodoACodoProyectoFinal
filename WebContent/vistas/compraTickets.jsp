@@ -41,7 +41,7 @@
 							<a class="" href="FrontController#convertirteEnOrador">Conviértete en orador</a>
 						</li>
 						<li class="nav-item">
-							<a id="linkBackOffice" href="#">Back Office</a>
+							<a id="linkBackOffice" href="FrontController?accion=backOffice">Back Office</a>
 						</li>
 					</ul>
 				</div>

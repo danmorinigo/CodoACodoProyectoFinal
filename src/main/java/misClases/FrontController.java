@@ -77,8 +77,9 @@ public class FrontController extends HttpServlet {
 			}else {
 				dispatcher = request.getRequestDispatcher("vistas/ventaNoLograda.jsp");
 			}
+		}else if (accion.equals("backOffice")) {
+			dispatcher = request.getRequestDispatcher("vistas/backOffice.jsp");
 		}
-
 		dispatcher.forward(request, response);
 	}
 

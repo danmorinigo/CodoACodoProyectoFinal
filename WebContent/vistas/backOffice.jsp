@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="misClases.Venta"%>
+<%@page import="misClases.VentaDAO"%>
+<%@page import="misClases.Persona"%>
+<%@page import="misClases.PersonaDAO"%>
+<%@page import="misClases.TipoTicketDAO"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,42 +34,37 @@
 					</thead>					 
 				<%
 				
-				List<Ticket> resultado=null;
-				TicketDAO ticket=new TicketDAO();
-				resultado=ticket.listarTickets();
-				int totalFacturado=0;
+				List<Venta> ventas=null;
 				
-				for(int x=0;x<resultado.size();x++)
-				{
-				String rutaE="FrontController?accion=eliminar&id="+resultado.get(x).getId();
+				VentaDAO vDAO = new VentaDAO();
+				TipoTicketDAO ttDAO = new TipoTicketDAO();
+				PersonaDAO pDAO = new PersonaDAO();
+				Persona persona = null;
+				ventas = vDAO.listarVentas();
+				float totalFacturado=0;
 				
-				String tipoTicket;
-				
-				if(resultado.get(x).getTipo_ticket()==1)
+				for(int x=0; x < ventas.size(); x++)
 				{
-					tipoTicket="Estudiante";
-				}
-				else if(resultado.get(x).getTipo_ticket()==2)
-				{
-					tipoTicket="Trainee";
-				}
-				else
-				{
-					tipoTicket="Junior";
-				}				
+				String rutaE="FrontController?accion=eliminar&id="+ventas.get(x).getId();
+				persona = pDAO.buscarPorId(ventas.get(x).getIdPersona());
+				String nombre = persona.getNombre();
+				String apellido = persona.getApellido();
+				String tipoTicket = ttDAO.buscarTipoTicket(ventas.get(x).getIdTipoTicket()).getNombre();
+				float descuento = ttDAO.buscarTipoTicket(ventas.get(x).getIdTipoTicket()).getDescuento();
+				float total = (ventas.get(x).getValorTicket() - (ventas.get(x).getValorTicket() * descuento))* ventas.get(x).getCantidad();
 				%>
 				<tr>
-					<td><%=resultado.get(x).getId()%></td>
-					<td><%=resultado.get(x).getNombre()%></td>
-					<td><%=resultado.get(x).getApellido()%></td>
-					<td><%=resultado.get(x).getMail()%></td>
-					<td><%=resultado.get(x).getCant()%></td>
+					<td><%=ventas.get(x).getId()%></td>
+					<td><%=nombre%></td>
+					<td><%=apellido%></td>
+					<td><%=persona.getMail()%></td>
+					<td><%=ventas.get(x).getCantidad()%></td>
 					<td><%=tipoTicket%></td>
-					<td><%=resultado.get(x).getTotal_facturado()%></td>
+					<td><%=total%></td>
 					<td class="text-center" ><a href=<%=rutaE%>><i class="fa-solid fa-file"></i></a></td>
 				</tr>
 				<%
-				totalFacturado+=resultado.get(x).getTotal_facturado();
+				totalFacturado += total;
 				}
 				%>
 				
@@ -81,7 +82,7 @@
 		</table>
 		
 		
-		<a class="btn btn-success col-2 m-2" href="FrontController?accion=volver">Volver</a>
+		<a class="btn btn-success col-2 m-2" href="FrontController">Volver</a>
 		
 		</div>	
 </div>
